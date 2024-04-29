@@ -1153,6 +1153,7 @@ textarea {
         width        : 100%;
         margin-left  : 0;
         margin-right : 0;
+        padding-top  : 10%;
     }
 }
 
@@ -4417,7 +4418,7 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .s-footer {
     background-color : var(--color-gray-19);
-    padding-top      : calc(4.5 * var(--space));
+    padding-top      : calc(2.5 * var(--space));
     padding-bottom   : var(--vspace-3_5);
     margin-top       : auto;
     font-weight      : 300;
@@ -4560,7 +4561,7 @@ img.u-pull-left {
  * ## footer contact
  * ------------------------------------------------------------------- */
 .s-footer__contact {
-    margin-top    : var(--vspace-2);
+    margin-top    : var(--vspace-1);
     margin-bottom : var(--vspace-1);
 }
 
