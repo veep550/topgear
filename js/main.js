@@ -38,9 +38,43 @@
             });
         });
 
-        window.addEventListener('beforeunload' , function() {
-            siteBody.classList.remove('ss-show');
+let isUnloading = false;
+
+function setUnloadFlag() {
+    isUnloading = true;
+}
+
+// Detect mobile devices based on user-agent
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+// Add event listeners to only specific links that should trigger unload
+document.querySelectorAll('a[href]').forEach(link => {
+    if (!link.href.startsWith('tel:')) {
+        link.addEventListener('click', setUnloadFlag);
+    }
+});
+
+// Adjusted beforeunload event listener
+window.addEventListener('beforeunload', function(event) {
+    if (!isUnloading && !isMobile) {
+        // Prevent default behavior and provide a prompt only if needed
+        event.preventDefault();
+        event.returnValue = '';
+    }
+});
+
+// For mobile, specifically handle interactions that shouldn't trigger navigation prompts
+if (isMobile) {
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Prevent triggering any navigation prompts
+            event.preventDefault();
+            // Trigger the phone application directly
+            window.location.href = this.href;
         });
+    });
+}
+
 
     }; // end ssPreloader
 
