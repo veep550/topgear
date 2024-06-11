@@ -40,10 +40,10 @@
 
         window.addEventListener('beforeunload', function(event) {
             // Check if the active element's href starts with "tel:"
-            if (!document.activeElement || !document.activeElement.href || !document.activeElement.href.startsWith('tel:')) {
-                siteBody.classList.remove('ss-show');
-            }
-        });
+            if (!href || !(href.startsWith('tel:') || href.startsWith('https://www.facebook.com/') || href.startsWith('https://www.instagram.com/'))) {
+        siteBody.classList.remove('ss-show');
+    }
+});
         
 
     }; // end ssPreloader

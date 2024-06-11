@@ -3281,7 +3281,7 @@ img.u-pull-left {
     background-color : black;
     width            : 100%;
     height           : 100vh;
-    min-height       : calc(25.5 * var(--space));
+    min-height       : calc(21 * var(--space));
     overflow         : hidden;
     position         : relative;
 }
@@ -3463,7 +3463,7 @@ img.u-pull-left {
     z-index  : 2;
     position : absolute;
     right    : 4.2rem;
-    bottom   : var(--vspace-1);
+    bottom   : var(--vspace-2);
 }
 
 .s-intro__scroll svg {
